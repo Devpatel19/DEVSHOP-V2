@@ -27,7 +27,7 @@
   "scripts": {
     "start": "node server",
     "server": "nodemon server",
-    "build": "npm install",
+    "build": "npm install --force",
     "client": "npm start --prefix basic",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "node backend/seeder",
