@@ -8,7 +8,7 @@ import Message from '../component/Message'
 import Loader from '../component/Loader'
 import { getOrderDetails, payOrder, deliverOrder } from '../actions/orderActions'
 import { ORDER_PAY_RESET, ORDER_DELIVER_RESET } from '../constants/orderConstants' 
-import { set } from 'mongoose'
+import { Node_URL } from '../constants/backendURL'
 
 const OrderScreen = ({ history,match }) => {
     const orderId = match.params.id
@@ -49,7 +49,7 @@ const OrderScreen = ({ history,match }) => {
         }
 
         const addPayPalScript = async () => {
-            const { data: clientId } = await axios.get('/api/config/paypal')
+            const { data: clientId } = await axios.get(`${Node_URL}/api/config/paypal`)
             const script = document.createElement('script')
             script.type = 'text/javascript'
             script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}`
