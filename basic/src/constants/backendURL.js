@@ -1,0 +1,1 @@
+export const Node_URL = 'https://devshop-backend.onrender.com'
